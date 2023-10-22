@@ -1,4 +1,3 @@
-const fieldname = prompt('Please enter correct field name');
 
 const student = {
     name: 'Alex',
@@ -11,22 +10,19 @@ const student = {
 const rightFields = [];
 const wrongFields = [];
 
-const keys = Object.keys(student);
-
 const attempts = 10;
 
+for(let i = 0; i < attempts; i++) {
+
+    const fieldname = prompt('Please enter correct field name');
 
 
-for(let i = 0; i < keys.length; i++) {
+    if(fieldname in student) {
 
-    --attempts;
-
-    if(fieldname === keys[i] && attempts<=10) {
-
-        rightFields = student.push(fieldname);
+        rightFields.push(fieldname);
 
     } else {
-        wrongFields = student.push(fieldname);
+        wrongFields.push(fieldname);
         
     }
 
